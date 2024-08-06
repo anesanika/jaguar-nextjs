@@ -1,0 +1,36 @@
+.myList {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.myList li {
+  font-size: 13px;
+  color: #6b6b6b;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 120px;
+  justify-content: space-between;
+}
+
+.myList li div {
+  min-width: 200px;
+  border: 1px solid #2e2e2e;
+  color: #2e2e2e;
+  padding: 10px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.myList li div::after {
+  position: absolute;
+  content: "";
+  left: -110px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 1px;
+  background-color: #000;
+}

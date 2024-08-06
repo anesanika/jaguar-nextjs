@@ -2,32 +2,278 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #2e2e2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a7a7a7;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #efefef;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@font-face {
+  font-family: montse;
+  src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: montseBold;
+  src: url(../assets/fonts/Montserrat-Bold.ttf);
+}
+
+.contnet {
+  width: 1000px;
+  max-width: 100%;
+  margin: auto;
+}
+@media (max-width: 1200px) {
+  .header-image {
+    max-width: 400px;
+  }
+
+  .text-large {
+    font-size: 30px;
+  }
+
+  .headline-text {
+    font-size: 80px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+  .feat-title {
+    font-size: 80px;
+    max-width: 80%;
+  }
+
+  .feat-description {
+    font-size: 1rem; /* 16px */
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .text-small {
+    font-size: 14px;
+  }
+
+  .text-large {
+    font-size: 24px;
+  }
+
+  .headline-text {
+    font-size: 60px;
+  }
+
+  .info-box {
+    font-size: 14px;
+    display: none;
+  }
+
+  .date-box {
+    font-size: 18px;
+  }
+
+  .content-wrapper {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-gallery img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .feat-content {
+    transform: none;
+  }
+
+  .feat-title {
+    font-size: 60px;
+    max-width: 90%;
+  }
+
+  .feat-description {
+    font-size: 0.875rem; /* 14px */
+    max-width: 70%;
+  }
+
+  .feat-image {
+    top: 8rem; /* 128px */
+  }
+  .list-cont {
+    flex-direction: column;
+    gap: 100px;
+  }
+  .list-cont ul {
+    width: 100%;
+  }
+  .list-cont ul li {
+    justify-content: space-around;
+  }
+  .list-cont ul li div::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 0.5rem;
+  }
+
+  .header-content {
+    transform: none;
+  }
+
+  .text-small {
+    font-size: 12px;
+  }
+
+  .text-large {
+    font-size: 20px;
+  }
+
+  .headline-text {
+    font-size: 40px;
+  }
+
+  .info-box {
+    font-size: 12px;
+  }
+
+  .date-box {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+
+  .feat-title {
+    font-size: 40px;
+    max-width: 100%;
+  }
+
+  .feat-text {
+    rotate: 0;
+    transform: rotate(0);
+  }
+
+  .feat-description {
+    font-size: 0.75rem; /* 12px */
+    max-width: 80%;
+  }
+
+  .feat-image {
+    display: none;
+  }
+  .dtype-cont {
+    transform: rotate(0);
+  }
+  .image-cont {
+    display: none;
+  }
+  .dtypetext-cont {
+    align-items: center;
+  }
+  .dtypetext-cont h1 {
+    font-size: 70px;
+  }
+  .dtypetext-cont p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-small {
+    font-size: 10px;
+  }
+
+  .text-large {
+    font-size: 18px;
+  }
+
+  .headline-text {
+    font-size: 30px;
+  }
+
+  .info-box {
+    font-size: 10px;
+  }
+
+  .date-box {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .section-description {
+    font-size: 12px;
+  }
+
+  .image-gallery img {
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .feat-title {
+    font-size: 30px;
+    max-width: 100%;
+  }
+
+  .feat-description {
+    font-size: 0.625rem; /* 10px */
+    max-width: 90%;
+  }
+
+  .feat-image {
+    top: 4rem; /* 64px */
+  }
+  .list-cont ul li div {
+    font-size: 12px;
+    min-width: 150px;
+  }
+  .dtypetext-cont h1 {
+    font-size: 50px;
+  }
+  .dtypetext-cont p {
+    line-height: 14px;
+    font-size: 10px;
+  }
+  .footer-cont {
+    font-size: 10px;
   }
 }
