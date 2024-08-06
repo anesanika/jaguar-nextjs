@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
           <Animate slider={true}>
             <a
               className="underline"
-              download="anesianinika.pdf"
-              href="../../../public/anesianinika.pdf"
+              download="AnesianiNika.pdf"
+              href="../../../public/AnesianiNika.pdf"
             >
               MY PROPOSAL
             </a>
